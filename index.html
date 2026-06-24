@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission Ready Education | Veteran Resource Center</title>
+  <style>
+    :root {
+      --navy: #0b2341;
+      --red: #c62828;
+      --gold: #f5b400;
+      --light: #f5f7fa;
+      --gray: #667085;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--navy), #163b66);
+      color: var(--white);
+      padding: 48px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      letter-spacing: .5px;
+    }
+    header p {
+      margin: 0 auto;
+      max-width: 760px;
+      font-size: 1.15rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: -28px auto 0;
+      padding: 0 20px 48px;
+    }
+    .intro {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 10px 24px rgba(16, 24, 40, .08);
+      border-top: 5px solid var(--red);
+      margin-bottom: 24px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 10px 24px rgba(16, 24, 40, .08);
+      display: flex;
+      flex-direction: column;
+      min-height: 295px;
+    }
+    .icon {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.45rem;
+    }
+    .card p { margin: 0 0 18px; color: #344054; }
+    .card ul { margin: 0 0 22px 20px; padding: 0; color: #344054; }
+    .button {
+      margin-top: auto;
+      display: inline-block;
+      text-align: center;
+      padding: 13px 18px;
+      border-radius: 10px;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .button:hover { filter: brightness(.95); }
+    .secondary { background: var(--navy); }
+    .coming-soon {
+      margin-top: 24px;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 10px 24px rgba(16, 24, 40, .08);
+    }
+    .coming-soon h2 { color: var(--navy); margin-top: 0; }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .badge {
+      background: #eef2f6;
+      color: var(--navy);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: .95rem;
+      font-weight: 700;
+    }
+    .disclaimer {
+      margin-top: 24px;
+      font-size: .92rem;
+      color: var(--gray);
+      background: #fff8e1;
+      border-left: 5px solid var(--gold);
+      padding: 16px;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 24px 20px 38px;
+      color: var(--gray);
+      font-size: .95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mission Ready Education</h1>
+    <p>Veteran Resource Center</p>
+    <p>Free tools to help veterans and military families explore education benefits, civilian career paths, and their next mission.</p>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <strong>Start here:</strong> Use these tools during webinars, one-on-one conversations, or personal planning. They are designed to help identify benefits and career options worth reviewing, not to replace official VA, CalVet, school, or employment determinations.
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="icon">🎓</div>
+        <h2>VA Benefits Quick Review</h2>
+        <p>Answer a few questions to identify VA education benefits and state resources that may be worth reviewing.</p>
+        <ul>
+          <li>Chapter 33 Post-9/11 GI Bill</li>
+          <li>Chapter 31 VR&E</li>
+          <li>Chapter 35 DEA</li>
+          <li>CalVet Fee Waiver</li>
+        </ul>
+        <a class="button" href="mre_va_benefits_quick_review_app.html">Launch Benefits Tool</a>
+      </article>
+
+      <article class="card">
+        <div class="icon">🪖</div>
+        <h2>Military Career Translator</h2>
+        <p>Translate military experience into civilian career paths, transferable skills, education options, certifications, and resume keywords.</p>
+        <ul>
+          <li>Branch-specific MOS, AFSC, rating, and career fields</li>
+          <li>Civilian job matches</li>
+          <li>Education and certification ideas</li>
+        </ul>
+        <a class="button secondary" href="mre_military_career_translator.html">Launch Career Tool</a>
+      </article>
+    </section>
+
+    <section class="coming-soon">
+      <h2>Coming Soon</h2>
+      <p>Mission Ready Education is building additional tools to support veterans and military families as they plan education and career goals.</p>
+      <div class="badges">
+        <span class="badge">Degree Planner</span>
+        <span class="badge">Certification Finder</span>
+        <span class="badge">Resume Builder</span>
+        <span class="badge">School Comparison Tool</span>
+        <span class="badge">Webinar Registration</span>
+      </div>
+    </section>
+
+    <section class="disclaimer">
+      <strong>Disclaimer:</strong> These tools provide general educational information and planning guidance only. Final eligibility decisions are made by the U.S. Department of Veterans Affairs, CalVet, schools, employers, licensing boards, and other applicable agencies.
+    </section>
+  </main>
+
+  <footer>
+    © Mission Ready Education. Helping veterans plan their next mission through education.
+  </footer>
+</body>
+</html>

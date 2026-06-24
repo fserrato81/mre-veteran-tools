@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M.R.E. Military Career Translator</title>
+  <style>
+    :root{--navy:#0B2341;--red:#C62828;--gold:#F5B400;--light:#F2F4F7;--text:#1f2937;--white:#fff}
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--light);color:var(--text)}
+    .wrap{max-width:1050px;margin:0 auto;padding:24px}.hero{background:linear-gradient(135deg,var(--navy),#143e70);color:white;border-radius:18px;padding:28px;box-shadow:0 8px 30px rgba(0,0,0,.16)}
+    .hero h1{margin:0 0 8px;font-size:32px}.hero p{margin:0;font-size:16px;line-height:1.5}.brand{font-weight:700;color:var(--gold)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.card{background:white;border-radius:16px;padding:22px;box-shadow:0 5px 18px rgba(0,0,0,.08)}
+    label{font-weight:700;display:block;margin:14px 0 7px}select,input{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:10px;font-size:15px;background:white}
+    button{border:0;border-radius:10px;padding:13px 18px;font-weight:700;cursor:pointer;margin-top:16px;font-size:15px}.primary{background:var(--red);color:white}.secondary{background:var(--navy);color:white}.ghost{background:#e5e7eb;color:#111827}
+    .results h2{margin-top:0;color:var(--navy)}.badge{display:inline-block;background:#eef2ff;color:var(--navy);border-left:5px solid var(--red);padding:9px 12px;border-radius:8px;margin:5px 6px 5px 0;font-weight:700}
+    ul{margin-top:8px}.section{border-top:1px solid #e5e7eb;margin-top:16px;padding-top:14px}.muted{font-size:13px;color:#64748b;line-height:1.5}.disclaimer{font-size:12px;color:#475569;background:#f8fafc;border:1px solid #e2e8f0;padding:13px;border-radius:12px;margin-top:18px}.footer{text-align:center;margin:18px;color:#64748b;font-size:13px}
+    @media(max-width:800px){.grid{grid-template-columns:1fr}.hero h1{font-size:26px}}
+    @media print{button,.input-card{display:none}.grid{display:block}.card{box-shadow:none;border:1px solid #ddd}.hero{box-shadow:none}.wrap{padding:0}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>M.R.E. Military Career Translator</h1>
+      <p><span class="brand">Mission Ready Education</span> career exploration tool for translating military experience into civilian occupations, transferable skills, education pathways, and resume keywords.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card input-card">
+        <h2>Quick Review</h2>
+        <label for="branch">Branch</label>
+        <select id="branch"><option>Army</option><option>Air Force</option><option>Navy</option><option>Marine Corps</option><option>Coast Guard</option><option>Space Force</option></select>
+
+        <label for="mos">MOS / Rating / AFSC or Career Field</label>
+        <select id="mos"></select>
+
+        <label for="years">Years of Experience</label>
+        <select id="years"><option value="0-3">0-3 years</option><option value="4-7">4-7 years</option><option value="8-12">8-12 years</option><option value="13+">13+ years</option></select>
+
+        <label for="leadership">Leadership Level</label>
+        <select id="leadership"><option value="none">No formal leadership</option><option value="team">Team leader / Shift lead</option><option value="nco">NCO / Supervisor</option><option value="senior">Senior NCO / Manager</option></select>
+
+        <label for="education">Education Interest</label>
+        <select id="education"><option>Not sure yet</option><option>Certificate or short-term training</option><option>Associate degree</option><option>Bachelor's degree</option><option>Graduate degree</option></select>
+
+        <button class="primary" onclick="runReview()">Translate Experience</button>
+        <button class="ghost" onclick="resetApp()">Reset</button>
+      </div>
+
+      <div class="card results" id="results">
+        <h2>Results will appear here</h2>
+        <p class="muted">Select a military career field and click <strong>Translate Experience</strong>. This tool is best used as a live webinar conversation starter or one-on-one advising aid.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h2>How to Use During Webinars</h2>
+      <ol>
+        <li>Ask the veteran for their MOS, rating, AFSC, or closest career field.</li>
+        <li>Select years of experience and leadership level.</li>
+        <li>Click <strong>Translate Experience</strong>.</li>
+        <li>Use the results to discuss civilian job titles, resume language, and possible education paths.</li>
+        <li>Remind attendees this is a career exploration tool, not a guarantee of employment or credential approval.</li>
+      </ol>
+      <div class="disclaimer"><strong>Disclaimer:</strong> This tool provides general career exploration guidance. Civilian job matches, education requirements, and licensing needs vary by employer, state, industry, and individual background. Veterans should verify requirements with employers, schools, credentialing agencies, VA, and workforce professionals.</div>
+    </div>
+    <div class="footer">Mission Ready Education | Your next mission starts here</div>
+  </div>
+
+<script>
+const branchCareerData = {
+  "Army": {
+    "92Y / Unit Supply Specialist (Supply & Logistics)": baseLogistics(),
+    "11B / Infantry (Combat Arms)": baseCombatArms(),
+    "25 Series / Signal & IT Communications": baseIT(),
+    "68 Series / Army Medical": baseMedical(),
+    "31B / Military Police": basePolice(),
+    "88 Series / Transportation": baseTransportation(),
+    "91 Series / Maintenance & Mechanics": baseMaintenance(),
+    "42A / Human Resources Specialist": baseAdminHR(),
+    "35 Series / Military Intelligence": baseIntel(),
+    "Instructor / Trainer / NCO Leadership": baseInstructor()
+  },
+  "Air Force": {
+    "2S0X1 / Materiel Management (Logistics & Supply)": baseLogistics(),
+    "3F5X1 / Administration": baseAdminHR(),
+    "1D7X1 / Cyber Defense Operations": baseIT(),
+    "4N0X1 / Aerospace Medical Service": baseMedical(),
+    "3P0X1 / Security Forces": basePolice(),
+    "2T1X1 / Vehicle Operations": baseTransportation(),
+    "2A / Aircraft Maintenance Career Field": baseMaintenance(),
+    "1N / Intelligence Career Field": baseIntel(),
+    "Instructor / Trainer / NCO Leadership": baseInstructor()
+  },
+  "Navy": {
+    "LS / Logistics Specialist": baseLogistics(),
+    "IT / Information Systems Technician": baseIT(),
+    "HM / Hospital Corpsman": baseMedical(),
+    "MA / Master-at-Arms": basePolice(),
+    "BM / Boatswain's Mate Operations": baseCombatArms(),
+    "CM / Construction Mechanic or MM / Machinist's Mate": baseMaintenance(),
+    "YN / Yeoman Administration": baseAdminHR(),
+    "IS / Intelligence Specialist": baseIntel(),
+    "Instructor / Trainer / Petty Officer Leadership": baseInstructor()
+  },
+  "Marine Corps": {
+    "3043 / Supply Administration & Operations Specialist": baseLogistics(),
+    "0311 / Rifleman (Infantry)": baseCombatArms(),
+    "0671 / Data Systems Administrator or 0631 Network Administrator": baseIT(),
+    "5811 / Military Police": basePolice(),
+    "3531 / Motor Vehicle Operator": baseTransportation(),
+    "3521 / Automotive Maintenance Technician": baseMaintenance(),
+    "0111 / Administrative Specialist": baseAdminHR(),
+    "0231 / Intelligence Specialist": baseIntel(),
+    "Instructor / Trainer / NCO Leadership": baseInstructor(),
+    "Medical Support Note: Marines typically receive medical care from Navy HM Corpsmen": baseMedical()
+  },
+  "Coast Guard": {
+    "SK / Storekeeper (Supply & Logistics)": baseLogistics(),
+    "IT / Information Systems Technician": baseIT(),
+    "HS / Health Services Technician": baseMedical(),
+    "ME / Maritime Enforcement Specialist": basePolice(),
+    "BM / Boatswain's Mate Operations": baseCombatArms(),
+    "MK / Machinery Technician": baseMaintenance(),
+    "YN / Yeoman Administration": baseAdminHR(),
+    "IS / Intelligence Specialist": baseIntel(),
+    "Instructor / Trainer / Petty Officer Leadership": baseInstructor()
+  },
+  "Space Force": {
+    "5S / Space Systems Operations": {
+      titles:["Satellite Operations Specialist","Space Operations Analyst","Mission Operations Coordinator","Aerospace Operations Specialist","Systems Operations Technician"],
+      skills:["Mission monitoring","Technical troubleshooting","Operations documentation","Risk management","Systems awareness","Team coordination","Compliance"],
+      education:["Information Technology","Systems Engineering Technology","Cybersecurity","Data Analytics","Aerospace Studies","Project Management"],
+      certs:["CompTIA A+","Network+","Security+","ITIL Foundation","Project Management fundamentals","Cloud fundamentals"],
+      keywords:["space operations","mission operations","systems monitoring","technical documentation","risk management","operations coordination"]
+    },
+    "5C / Cyber Operations": baseIT(),
+    "5I / Intelligence": baseIntel(),
+    "Instructor / Trainer / NCO Leadership": baseInstructor()
+  }
+};
+
+function baseLogistics(){return {
+  titles:["Logistics Coordinator","Supply Chain Specialist","Inventory Control Specialist","Warehouse Operations Supervisor","Procurement Assistant","Operations Coordinator","Property Accountability Specialist"],
+  skills:["Inventory management","Supply accountability","Procurement support","Records management","Asset tracking","Compliance","Equipment management","Vendor coordination"],
+  education:["Business Administration","Supply Chain Management","Logistics","Operations Management","Project Management","Information Systems"],
+  certs:["Certified Logistics Associate (CLA)","Certified Logistics Technician (CLT)","Project Management fundamentals","Lean Six Sigma Yellow Belt","Microsoft Excel / Data Analytics"],
+  keywords:["inventory control","supply chain","property accountability","logistics operations","procurement","asset management","records compliance"]
+}}
+function baseCombatArms(){return {
+  titles:["Security Supervisor","Operations Coordinator","Training Specialist","Emergency Management Specialist","Law Enforcement Officer","Team Lead","Field Operations Supervisor"],
+  skills:["Leadership under pressure","Risk management","Training and mentoring","Team coordination","Safety procedures","Mission planning","Decision-making"],
+  education:["Criminal Justice","Emergency Management","Homeland Security","Business Management","Organizational Leadership"],
+  certs:["EMT basics","Security certifications","Project Management fundamentals","OSHA safety training","Instructor certification"],
+  keywords:["team leadership","operations planning","risk assessment","training delivery","mission execution","safety compliance"]
+}}
+function baseIT(){return {
+  titles:["IT Support Specialist","Network Technician","Systems Administrator","Cybersecurity Analyst","Help Desk Technician","Telecommunications Technician","Network Operations Specialist"],
+  skills:["Network troubleshooting","Systems support","Communications operations","Information security basics","Technical documentation","Customer support","Equipment maintenance"],
+  education:["Information Technology","Cybersecurity","Network Administration","Computer Science","Cloud Computing"],
+  certs:["CompTIA A+","Network+","Security+","CCNA","Microsoft Azure Fundamentals","AWS Cloud Practitioner"],
+  keywords:["network support","technical troubleshooting","systems administration","cybersecurity","help desk","telecommunications"]
+}}
+function baseMedical(){return {
+  titles:["Medical Assistant","Emergency Medical Technician","Healthcare Administrator","Patient Care Coordinator","Clinical Operations Assistant","Public Health Technician"],
+  skills:["Patient care","Medical documentation","Emergency response","Clinical procedures","HIPAA awareness","Team coordination","Health and safety"],
+  education:["Healthcare Administration","Nursing prerequisites","Public Health","Medical Assisting","Health Information Management"],
+  certs:["EMT","BLS/CPR","Medical Assistant certification","Phlebotomy","Certified Nursing Assistant"],
+  keywords:["patient care","medical records","emergency response","clinical support","healthcare operations","HIPAA"]
+}}
+function basePolice(){return {
+  titles:["Police Officer","Security Manager","Corrections Officer","Loss Prevention Manager","Investigations Assistant","Emergency Management Coordinator"],
+  skills:["Law enforcement operations","Report writing","Conflict de-escalation","Physical security","Investigations support","Access control","Crisis response"],
+  education:["Criminal Justice","Homeland Security","Public Administration","Emergency Management","Psychology"],
+  certs:["POST requirements vary by state","Security management certifications","Crisis intervention training","FEMA ICS courses"],
+  keywords:["public safety","law enforcement","security operations","incident reporting","access control","de-escalation"]
+}}
+function baseTransportation(){return {
+  titles:["Transportation Coordinator","Fleet Manager","Commercial Driver","Logistics Dispatcher","Distribution Supervisor","Route Planner"],
+  skills:["Fleet operations","Route planning","Dispatch coordination","Safety compliance","Vehicle maintenance tracking","Logistics movement","Documentation"],
+  education:["Logistics","Transportation Management","Business Administration","Supply Chain Management"],
+  certs:["CDL","DOT safety training","Forklift certification","Lean Six Sigma Yellow Belt","Fleet management training"],
+  keywords:["transportation operations","fleet management","dispatch","route planning","logistics movement","DOT compliance"]
+}}
+function baseMaintenance(){return {
+  titles:["Diesel Mechanic","Maintenance Technician","Fleet Maintenance Supervisor","Equipment Repair Specialist","Facilities Maintenance Technician","Service Advisor"],
+  skills:["Preventive maintenance","Troubleshooting","Repair documentation","Safety inspections","Tool accountability","Equipment diagnostics","Shop operations"],
+  education:["Automotive Technology","Diesel Technology","Industrial Maintenance","Engineering Technology","Business Management"],
+  certs:["ASE certifications","Diesel technician certifications","HVAC basics","OSHA safety","Forklift certification"],
+  keywords:["preventive maintenance","diagnostics","equipment repair","fleet maintenance","safety inspections","technical troubleshooting"]
+}}
+function baseAdminHR(){return {
+  titles:["Human Resources Assistant","Administrative Coordinator","Office Manager","Records Specialist","Benefits Coordinator","Recruiting Assistant"],
+  skills:["Personnel records","Customer service","Data entry","Benefits support","Scheduling","Policy compliance","Document management"],
+  education:["Human Resources Management","Business Administration","Organizational Leadership","Public Administration"],
+  certs:["SHRM basics","Microsoft Office Specialist","Project Management fundamentals","HR certificate","Payroll fundamentals"],
+  keywords:["HR administration","personnel records","benefits coordination","administrative support","records management","policy compliance"]
+}}
+function baseIntel(){return {
+  titles:["Intelligence Analyst","Research Analyst","Security Analyst","Fraud Analyst","Geospatial Analyst","Operations Analyst","Risk Analyst"],
+  skills:["Research and analysis","Briefing","Pattern recognition","Report writing","Risk assessment","Data interpretation","Critical thinking"],
+  education:["Intelligence Studies","Criminal Justice","Cybersecurity","Data Analytics","International Relations","Homeland Security"],
+  certs:["Security+","Data analytics certificates","GIS fundamentals","FEMA ICS courses","OSINT training"],
+  keywords:["intelligence analysis","research","risk assessment","briefing","data interpretation","threat analysis","report writing"]
+}}
+function baseInstructor(){return {
+  titles:["Corporate Trainer","Training Specialist","Instructional Designer","Operations Manager","Program Coordinator","Leadership Development Specialist"],
+  skills:["Curriculum delivery","Public speaking","Coaching","Performance evaluation","Team leadership","Lesson planning","Adult learning"],
+  education:["Education","Instructional Design","Organizational Leadership","Business Administration","Human Resources"],
+  certs:["Training and development certificate","Project Management fundamentals","Lean Six Sigma","Microsoft Office Specialist","Instructional design tools"],
+  keywords:["training delivery","curriculum development","adult learning","leadership development","performance coaching","public speaking"]
+}}
+
+const branchSelect = document.getElementById('branch');
+const mosSelect = document.getElementById('mos');
+
+function populateMosOptions(){
+  const branch = branchSelect.value;
+  mosSelect.innerHTML = '';
+  Object.keys(branchCareerData[branch]).forEach(k=>{
+    const opt=document.createElement('option');
+    opt.value=k;
+    opt.textContent=k;
+    mosSelect.appendChild(opt);
+  });
+}
+
+branchSelect.addEventListener('change', populateMosOptions);
+populateMosOptions();
+
+function runReview(){
+ const branch=document.getElementById('branch').value;
+ const key=document.getElementById('mos').value;
+ const data=branchCareerData[branch][key];
+ const years=document.getElementById('years').value, leadership=document.getElementById('leadership').value, education=document.getElementById('education').value;
+ let leadershipNote = leadership==='none' ? 'Focus on technical skills, reliability, and mission support.' : leadership==='team' ? 'Emphasize team coordination, shift leadership, and peer training.' : leadership==='nco' ? 'Emphasize supervision, accountability, training, and operations management.' : 'Emphasize program management, personnel leadership, compliance, and strategic operations.';
+ document.getElementById('results').innerHTML = `
+   <h2>Career Translation Results</h2>
+   <p><strong>Branch:</strong> ${branch}<br><strong>Military specialty / career field:</strong> ${key}<br><strong>Experience:</strong> ${years}<br><strong>Education interest:</strong> ${education}</p>
+   <div class="section"><h3>Civilian Occupations to Explore</h3>${data.titles.map(x=>`<span class="badge">${x}</span>`).join('')}</div>
+   <div class="section"><h3>Transferable Skills</h3><ul>${data.skills.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+   <div class="section"><h3>Recommended Education Pathways</h3><ul>${data.education.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+   <div class="section"><h3>Certifications / Training to Consider</h3><ul>${data.certs.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+   <div class="section"><h3>Resume Keywords</h3>${data.keywords.map(x=>`<span class="badge">${x}</span>`).join('')}</div>
+   <div class="section"><h3>Advisor Note</h3><p>${leadershipNote}</p></div>
+   <button class="secondary" onclick="window.print()">Print / Save PDF</button>
+   <div class="disclaimer"><strong>Career exploration only:</strong> Results are not a guarantee of employment, school admission, certification, or VA benefit approval. Military specialty codes change over time, and each service has different naming conventions.</div>`;
+}
+function resetApp(){location.reload()}
+</script>
+</body>
+</html>

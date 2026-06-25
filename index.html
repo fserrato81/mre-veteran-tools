@@ -3,188 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mission Ready Education | Veteran Resource Center</title>
+  <title>Mission Ready Navigator | Mission Ready Education</title>
   <style>
-    :root {
-      --navy: #0b2341;
-      --red: #c62828;
-      --gold: #f5b400;
-      --light: #f5f7fa;
-      --gray: #667085;
-      --white: #ffffff;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--light);
-      color: #1f2937;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(135deg, var(--navy), #163b66);
-      color: var(--white);
-      padding: 48px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 4vw, 3.3rem);
-      letter-spacing: .5px;
-    }
-    header p {
-      margin: 0 auto;
-      max-width: 760px;
-      font-size: 1.15rem;
-    }
-    .container {
-      max-width: 1100px;
-      margin: -28px auto 0;
-      padding: 0 20px 48px;
-    }
-    .intro {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 26px;
-      box-shadow: 0 10px 24px rgba(16, 24, 40, .08);
-      border-top: 5px solid var(--red);
-      margin-bottom: 24px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-    }
-    .card {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 26px;
-      box-shadow: 0 10px 24px rgba(16, 24, 40, .08);
-      display: flex;
-      flex-direction: column;
-      min-height: 295px;
-    }
-    .icon {
-      font-size: 2.5rem;
-      margin-bottom: 8px;
-    }
-    .card h2 {
-      margin: 0 0 10px;
-      color: var(--navy);
-      font-size: 1.45rem;
-    }
-    .card p { margin: 0 0 18px; color: #344054; }
-    .card ul { margin: 0 0 22px 20px; padding: 0; color: #344054; }
-    .button {
-      margin-top: auto;
-      display: inline-block;
-      text-align: center;
-      padding: 13px 18px;
-      border-radius: 10px;
-      background: var(--red);
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .button:hover { filter: brightness(.95); }
-    .secondary { background: var(--navy); }
-    .coming-soon {
-      margin-top: 24px;
-      background: var(--white);
-      border-radius: 16px;
-      padding: 26px;
-      box-shadow: 0 10px 24px rgba(16, 24, 40, .08);
-    }
-    .coming-soon h2 { color: var(--navy); margin-top: 0; }
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-    .badge {
-      background: #eef2f6;
-      color: var(--navy);
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: .95rem;
-      font-weight: 700;
-    }
-    .disclaimer {
-      margin-top: 24px;
-      font-size: .92rem;
-      color: var(--gray);
-      background: #fff8e1;
-      border-left: 5px solid var(--gold);
-      padding: 16px;
-      border-radius: 10px;
-    }
-    footer {
-      text-align: center;
-      padding: 24px 20px 38px;
-      color: var(--gray);
-      font-size: .95rem;
-    }
+    :root{--navy:#0B2341;--red:#C62828;--gold:#F5B400;--light:#F5F7FB;--gray:#667085;--border:#D6DAE4;--green:#157347;--white:#fff;--shadow:0 18px 45px rgba(11,35,65,.16)}
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#1D2939;background:linear-gradient(180deg,#f7f9fc 0%,#eef3f8 100%);line-height:1.5}.topbar{background:var(--navy);color:white;padding:16px 22px;border-bottom:5px solid var(--red)}.topbar-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px;text-transform:uppercase}.brand-badge{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--red),#8f1111);display:grid;place-items:center;color:white;font-weight:900;box-shadow:0 8px 20px rgba(0,0,0,.25)}.tagline{color:#D9E5F2;font-size:.95rem;text-align:right}.container{max-width:1120px;margin:0 auto;padding:26px 18px 52px}.hero{background:linear-gradient(115deg,rgba(11,35,65,.96),rgba(16,43,78,.88)),radial-gradient(circle at top right,rgba(245,180,0,.34),transparent 38%);color:white;border-radius:26px;padding:42px 34px;box-shadow:var(--shadow);overflow:hidden;position:relative}.hero:after{content:"";position:absolute;inset:auto -70px -90px auto;width:260px;height:260px;border-radius:50%;background:rgba(245,180,0,.12);border:2px solid rgba(255,255,255,.12)}.eyebrow{display:inline-block;background:rgba(245,180,0,.18);color:#FFE8A3;border:1px solid rgba(245,180,0,.55);border-radius:999px;padding:7px 12px;font-size:.82rem;font-weight:700;margin-bottom:14px;text-transform:uppercase;letter-spacing:.08em}h1{font-size:clamp(2.2rem,5vw,4.3rem);line-height:1.02;margin:0 0 16px;max-width:840px}.hero p{font-size:1.15rem;max-width:780px;color:#E9F1FA;margin:0 0 26px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:2}button,.button{border:0;border-radius:12px;padding:13px 18px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.18s ease;font-size:1rem}button:hover,.button:hover{transform:translateY(-1px)}.btn-primary{background:var(--red);color:white}.btn-secondary{background:white;color:var(--navy)}.btn-outline{background:transparent;color:var(--navy);border:1px solid var(--border)}.btn-muted{background:#EEF2F7;color:var(--navy)}.btn-green{background:var(--green);color:white}.panel{margin-top:22px;background:white;border:1px solid var(--border);border-radius:24px;box-shadow:0 10px 30px rgba(11,35,65,.08);overflow:hidden}.wizard-head{padding:22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap;background:#FBFCFE}.step-title{margin:0;font-size:1.45rem;color:var(--navy)}.step-note{margin:4px 0 0;color:var(--gray)}.progress-wrap{min-width:220px;flex:0 0 280px}.progress-label{display:flex;justify-content:space-between;font-size:.82rem;color:var(--gray);margin-bottom:6px;font-weight:700}.progress{height:10px;background:#E8EDF5;border-radius:999px;overflow:hidden}.progress div{height:100%;background:linear-gradient(90deg,var(--red),var(--gold));width:0%;transition:.25s ease}.wizard-body{padding:24px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.option{border:1px solid var(--border);background:white;border-radius:18px;padding:18px;cursor:pointer;transition:.18s ease;min-height:112px}.option:hover{border-color:#9CB0CA;transform:translateY(-1px);box-shadow:0 8px 18px rgba(11,35,65,.08)}.option.selected{border-color:var(--red);background:#FFF7F7;box-shadow:0 0 0 3px rgba(198,40,40,.13)}.option strong{display:block;color:var(--navy);font-size:1.05rem;margin-bottom:6px}.option span{color:var(--gray);font-size:.93rem}label{font-weight:800;color:var(--navy);display:block;margin-bottom:7px}input,select,textarea{width:100%;border:1px solid var(--border);border-radius:12px;padding:12px;font-size:1rem;background:white}.field{margin-bottom:16px}.field-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.wizard-foot{padding:18px 24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#FBFCFE}.small{font-size:.9rem;color:var(--gray)}.hidden{display:none!important}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}.result-card{border:1px solid var(--border);border-radius:18px;padding:18px;background:#fff}.result-card h3{margin:0 0 10px;color:var(--navy);font-size:1.12rem}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{background:#EEF3FA;border:1px solid #D8E1EC;color:#183B64;border-radius:999px;padding:7px 10px;font-size:.88rem;font-weight:700}.alert{border-left:5px solid var(--gold);background:#FFF9E7;padding:14px 16px;border-radius:14px;margin:14px 0}.alert strong{color:#7A4E00}.action-list{padding-left:20px;margin:10px 0 0}.action-list li{margin-bottom:10px}.tool-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}.tool-link{border:1px solid var(--border);border-radius:18px;background:white;padding:18px;text-decoration:none;color:inherit;display:block;transition:.18s ease}.tool-link:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(11,35,65,.1)}.tool-link h3{margin:0 0 6px;color:var(--navy)}.disclaimer{margin-top:18px;font-size:.86rem;color:#576475;background:#F8FAFC;border:1px solid var(--border);border-radius:14px;padding:14px}.footer{text-align:center;color:#667085;font-size:.9rem;margin-top:30px}.print-only{display:none}@media(max-width:760px){.tagline{text-align:left}.hero{padding:32px 22px;border-radius:20px}.grid,.grid-3,.field-row,.cards,.tool-links{grid-template-columns:1fr}.progress-wrap{flex:1 1 100%;min-width:0}.wizard-body{padding:18px}.wizard-foot{padding:16px 18px}}@media print{.topbar,.hero,.wizard-head,.wizard-foot,.footer,.no-print{display:none!important}body{background:white}.container{padding:0}.panel{box-shadow:none;border:0;margin:0}.wizard-body{padding:0}.cards{grid-template-columns:1fr 1fr}.print-only{display:block}}
   </style>
 </head>
 <body>
-  <header>
-    <h1>Mission Ready Education</h1>
-    <p>Veteran Resource Center</p>
-    <p>Free tools to help veterans and military families explore education benefits, civilian career paths, and their next mission.</p>
-  </header>
-
-  <main class="container">
-    <section class="intro">
-      <strong>Start here:</strong> Use these tools during webinars, one-on-one conversations, or personal planning. They are designed to help identify benefits and career options worth reviewing, not to replace official VA, CalVet, school, or employment determinations.
-    </section>
-
-    <section class="grid">
-      <article class="card">
-        <div class="icon">🎓</div>
-        <h2>VA Benefits Quick Review</h2>
-        <p>Answer a few questions to identify VA education benefits and state resources that may be worth reviewing.</p>
-        <ul>
-          <li>Chapter 33 Post-9/11 GI Bill</li>
-          <li>Chapter 31 VR&E</li>
-          <li>Chapter 35 DEA</li>
-          <li>CalVet Fee Waiver</li>
-        </ul>
-        <a class="button" href="mre_va_benefits_quick_review_app.html">Launch Benefits Tool</a>
-      </article>
-
-      <article class="card">
-        <div class="icon">🪖</div>
-        <h2>Military Career Translator</h2>
-        <p>Translate military experience into civilian career paths, transferable skills, education options, certifications, and resume keywords.</p>
-        <ul>
-          <li>Branch-specific MOS, AFSC, rating, and career fields</li>
-          <li>Civilian job matches</li>
-          <li>Education and certification ideas</li>
-        </ul>
-        <a class="button secondary" href="mre_military_career_translator.html">Launch Career Tool</a>
-      </article>
-    </section>
-
-    <section class="coming-soon">
-      <h2>Coming Soon</h2>
-      <p>Mission Ready Education is building additional tools to support veterans and military families as they plan education and career goals.</p>
-      <div class="badges">
-        <span class="badge">Degree Planner</span>
-        <span class="badge">Certification Finder</span>
-        <span class="badge">Resume Builder</span>
-        <span class="badge">School Comparison Tool</span>
-        <span class="badge">Webinar Registration</span>
-      </div>
-    </section>
-
-    <section class="disclaimer">
-      <strong>Disclaimer:</strong> These tools provide general educational information and planning guidance only. Final eligibility decisions are made by the U.S. Department of Veterans Affairs, CalVet, schools, employers, licensing boards, and other applicable agencies.
-    </section>
-  </main>
-
-  <footer>
-    © Mission Ready Education. Helping veterans plan their next mission through education.
-  </footer>
+<header class="topbar"><div class="topbar-inner"><div class="brand"><div class="brand-badge">MRE</div><div><div>Mission Ready Education</div><div style="font-size:.78rem;color:#BFD0E3;font-weight:700;text-transform:none;">Mission Ready Navigator v1.0</div></div></div><div class="tagline">Helping veterans navigate benefits, careers, and education.</div></div></header>
+<main class="container">
+<section class="hero no-print"><span class="eyebrow">Veteran Resource Center</span><h1>Your mission didn’t end. Your next one starts here.</h1><p>Mission Ready Navigator helps veterans, service members, and military families explore education benefits, translate military experience, and build a practical path forward.</p><div class="hero-actions"><button class="btn-primary" onclick="startWizard()">Start My Mission</button><a class="button btn-secondary" href="mre_va_benefits_quick_review_app.html">Open Benefits Tool</a><a class="button btn-secondary" href="mre_military_career_translator.html">Open Career Translator</a></div></section>
+<section class="panel" id="wizardPanel"><div class="wizard-head"><div><h2 class="step-title" id="stepTitle">Welcome to Mission Ready Navigator</h2><p class="step-note" id="stepNote">Answer a few questions and receive a starting action plan.</p></div><div class="progress-wrap"><div class="progress-label"><span id="stepCount">Step 1 of 7</span><span id="progressText">0%</span></div><div class="progress"><div id="progressBar"></div></div></div></div>
+<div class="wizard-body"><div class="print-only"><h1>Mission Ready Action Plan</h1><p>Generated by Mission Ready Navigator | Mission Ready Education</p></div>
+<div class="step" data-step="0"><h2 style="color:var(--navy);margin-top:0;">Start with one mission.</h2><p>Choose what you want help with today. The Navigator will guide you through a short assessment and create a practical starting point.</p><div class="tool-links"><a class="tool-link" href="mre_va_benefits_quick_review_app.html"><h3>🎓 Benefits Navigator</h3><p>Use the original quick review tool for VA and state education benefits.</p></a><a class="tool-link" href="mre_military_career_translator.html"><h3>🪖 Military Career Translator</h3><p>Use the original MOS, AFSC, Rating, and career field translator.</p></a></div><div class="alert"><strong>New in v1.0:</strong> Use the guided mission flow below to combine benefits, career, education, and next-step recommendations into one Mission Ready Action Plan.</div></div>
+<div class="step hidden" data-step="1"><h2 style="color:var(--navy);margin-top:0;">What are you trying to accomplish today?</h2><div class="grid"><div class="option" data-field="mission" data-value="benefits"><strong>Explore My Benefits</strong><span>I want to understand what VA, state, or education benefits may apply to me.</span></div><div class="option" data-field="mission" data-value="career"><strong>Translate My Military Experience</strong><span>I want to connect my military background to civilian career options.</span></div><div class="option" data-field="mission" data-value="education"><strong>Plan My Education Path</strong><span>I want to explore degrees, training, or certifications for my goals.</span></div><div class="option" data-field="mission" data-value="unsure"><strong>I’m Not Sure Yet</strong><span>I need help figuring out where to start.</span></div></div></div>
+<div class="step hidden" data-step="2"><h2 style="color:var(--navy);margin-top:0;">Which best describes you?</h2><div class="grid-3"><div class="option" data-field="status" data-value="Veteran"><strong>Veteran</strong><span>I have served and separated or retired.</span></div><div class="option" data-field="status" data-value="Active Duty"><strong>Active Duty</strong><span>I am currently serving full-time.</span></div><div class="option" data-field="status" data-value="National Guard"><strong>National Guard</strong><span>I serve or served in the Guard.</span></div><div class="option" data-field="status" data-value="Reserve"><strong>Reserve</strong><span>I serve or served in the Reserve.</span></div><div class="option" data-field="status" data-value="Spouse"><strong>Spouse</strong><span>I am a military or veteran spouse.</span></div><div class="option" data-field="status" data-value="Dependent"><strong>Dependent</strong><span>I am a dependent family member.</span></div></div></div>
+<div class="step hidden" data-step="3"><h2 style="color:var(--navy);margin-top:0;">Military Background</h2><div class="field-row"><div class="field"><label for="branch">Branch</label><select id="branch"><option value="">Select branch</option><option>Army</option><option>Air Force</option><option>Navy</option><option>Marine Corps</option><option>Coast Guard</option><option>Space Force</option></select></div><div class="field"><label for="specialty">MOS / AFSC / Rating / Career Field</label><select id="specialty"><option value="">Select branch first</option></select></div></div><div class="field-row"><div class="field"><label for="years">Years of Service</label><select id="years"><option value="">Select years</option><option value="0-3">0–3</option><option value="4-7">4–7</option><option value="8-12">8–12</option><option value="13-20">13–20</option><option value="20+">20+</option></select></div><div class="field"><label for="leadership">Leadership Level</label><select id="leadership"><option value="">Select level</option><option value="Junior Enlisted / Entry Level">Junior Enlisted / Entry Level</option><option value="NCO / Supervisor">NCO / Supervisor</option><option value="Senior NCO / Manager">Senior NCO / Manager</option><option value="Officer / Program Leader">Officer / Program Leader</option></select></div></div></div>
+<div class="step hidden" data-step="4"><h2 style="color:var(--navy);margin-top:0;">Benefits Snapshot</h2><div class="field-row"><div class="field"><label for="disability">VA Service-Connected Disability Rating</label><select id="disability"><option value="">Select one</option><option value="none">No rating / Not sure</option><option value="0">0%</option><option value="10-40">10%–40%</option><option value="50-90">50%–90%</option><option value="100">100%</option><option value="pt">Permanent & Total</option></select></div><div class="field"><label for="chapter33">Have you used Chapter 33 Post-9/11 GI Bill?</label><select id="chapter33"><option value="">Select one</option><option value="no">No</option><option value="yes_remaining">Yes, with months remaining</option><option value="yes_exhausted">Yes, exhausted or almost exhausted</option><option value="not_sure">Not sure</option></select></div></div><div class="field-row"><div class="field"><label for="vre">Have you applied for Chapter 31 VR&E?</label><select id="vre"><option value="">Select one</option><option value="no">No</option><option value="yes_approved">Yes, approved</option><option value="yes_not_approved">Yes, not approved</option><option value="not_sure">Not sure</option></select></div><div class="field"><label for="dependents">Do you have dependents?</label><select id="dependents"><option value="">Select one</option><option value="yes">Yes</option><option value="no">No</option></select></div></div><div class="field-row"><div class="field"><label for="state">State of Residence</label><select id="state"><option value="">Select state</option><option value="CA">California</option><option value="Other">Other / Not listed</option></select></div><div class="field"><label for="usedMgib">Have you used or paid into Montgomery GI Bill?</label><select id="usedMgib"><option value="">Select one</option><option value="yes">Yes</option><option value="no">No / Not sure</option></select></div></div></div>
+<div class="step hidden" data-step="5"><h2 style="color:var(--navy);margin-top:0;">Career and Education Goal</h2><div class="field"><label for="careerGoal">What career area are you interested in?</label><select id="careerGoal"><option value="">Select one</option><option value="business">Business / Management</option><option value="it">Information Technology</option><option value="cybersecurity">Cybersecurity</option><option value="healthcare">Healthcare</option><option value="logistics">Logistics / Supply Chain</option><option value="trades">Skilled Trades</option><option value="education">Education / Training</option><option value="public_safety">Public Safety</option><option value="administration">Administration</option><option value="unsure">I’m not sure yet</option></select></div><div class="field"><label for="educationGoal">What education goal fits you best?</label><select id="educationGoal"><option value="">Select one</option><option value="certificate">Certificate / Short-term training</option><option value="associate">Associate degree</option><option value="bachelor">Bachelor's degree</option><option value="masters">Graduate degree</option><option value="finish">Finish a degree I already started</option><option value="unsure">Not sure yet</option></select></div><div class="field"><label for="notes">Optional Notes</label><textarea id="notes" rows="4" placeholder="Example: I was a Supply Sergeant and want to move into IT or project management."></textarea></div></div>
+<div class="step hidden" data-step="6"><h2 style="color:var(--navy);margin-top:0;">Your Mission Assessment</h2><p>Based on what you shared, here are areas to explore first.</p><div id="assessmentAlerts"></div><div class="cards"><div class="result-card"><h3>🎓 Benefits to Review</h3><div class="chips" id="benefitChips"></div></div><div class="result-card"><h3>🪖 Career Matches</h3><div class="chips" id="careerChips"></div></div><div class="result-card"><h3>📚 Education Paths</h3><div class="chips" id="educationChips"></div></div><div class="result-card"><h3>🎖 Certifications / Skill Builders</h3><div class="chips" id="certChips"></div></div></div></div>
+<div class="step hidden" data-step="7"><h2 style="color:var(--navy);margin-top:0;">Your Mission Ready Action Plan</h2><p>This is a starting point you can save, print, or use during a conversation with a counselor, school, VSO, or advisor.</p><div class="result-card"><h3>Recommended Next Steps</h3><ol class="action-list" id="actionList"></ol></div><div class="cards"><div class="result-card"><h3>Your Profile Summary</h3><div id="summary"></div></div><div class="result-card"><h3>Helpful Reminder</h3><p>If you have a service-connected disability and have not applied for VR&E, consider reviewing Chapter 31 before using more Chapter 33 benefits. This may preserve GI Bill entitlement for a future program or dependent transfer if otherwise eligible under VA rules.</p></div></div><div class="disclaimer"><strong>Disclaimer:</strong> Mission Ready Navigator provides educational guidance and resource information. It does not determine official eligibility for VA, CalVet, state, federal, or institutional benefits. Final eligibility and benefit decisions are made by the U.S. Department of Veterans Affairs, CalVet, and other applicable agencies.</div></div>
+</div>
+<div class="wizard-foot no-print"><div class="small" id="helperText">Tip: You can use the Back button to change an answer.</div><div style="display:flex;gap:10px;flex-wrap:wrap;"><button class="btn-outline" id="backBtn" onclick="backStep()">Back</button><button class="btn-muted" onclick="resetWizard()">Start Over</button><button class="btn-primary" id="nextBtn" onclick="nextStep()">Continue</button><button class="btn-green hidden" id="printBtn" onclick="window.print()">Print / Save PDF</button></div></div></section><div class="footer">Mission Ready Education | Mission Ready Navigator v1.0 | Plan your next mission with confidence.</div></main>
+<script>
+let currentStep=0,totalSteps=7;const data={};const specialtyMap={Army:[["11B Infantry","Combat Arms / Operations"],["25B Information Technology Specialist","IT / Communications"],["35F Intelligence Analyst","Intelligence / Analysis"],["42A Human Resources Specialist","Administration / HR"],["68W Combat Medic Specialist","Medical / Healthcare"],["88M Motor Transport Operator","Transportation / Logistics"],["91B Wheeled Vehicle Mechanic","Maintenance / Mechanics"],["92A Automated Logistical Specialist","Logistics / Supply"],["92Y Unit Supply Specialist","Logistics / Supply"]],"Air Force":[["1D7X1 Cyber Defense Operations","Cybersecurity / IT"],["2A5X4 Refuel/Bomber Aircraft Maintenance","Maintenance / Aviation"],["3F0X1 Personnel","Administration / HR"],["4N0X1 Aerospace Medical Service","Medical / Healthcare"],["6F0X1 Financial Management","Finance / Administration"],["2S0X1 Materiel Management","Logistics / Supply"]],Navy:[["HM Hospital Corpsman","Medical / Healthcare"],["IT Information Systems Technician","IT / Communications"],["LS Logistics Specialist","Logistics / Supply"],["MA Master-at-Arms","Public Safety"],["PS Personnel Specialist","Administration / HR"],["YN Yeoman","Administration"]],"Marine Corps":[["0311 Rifleman","Combat Arms / Operations"],["0621 Transmissions System Operator","Communications / IT"],["0111 Administrative Specialist","Administration"],["3043 Supply Administration and Operations","Logistics / Supply"],["3531 Motor Vehicle Operator","Transportation"],["5811 Military Police","Public Safety"]],"Coast Guard":[["BM Boatswain's Mate","Operations / Leadership"],["HS Health Services Technician","Medical / Healthcare"],["IT Information Systems Technician","IT / Communications"],["MK Machinery Technician","Maintenance / Mechanics"],["SK Storekeeper","Logistics / Supply"],["YN Yeoman","Administration"]],"Space Force":[["5C Cyber Operations","Cybersecurity / IT"],["5S Space Systems Operations","Operations / Technology"],["5I Intelligence","Intelligence / Analysis"]]};
+const careerData={logistics:{careers:["Logistics Coordinator","Supply Chain Specialist","Inventory Control Specialist","Warehouse Operations Manager","Procurement Assistant","Operations Coordinator","Property Management Specialist"],education:["Business Administration","Supply Chain Management","Project Management","Operations Management","Information Technology"],certs:["Lean Six Sigma","Certified Logistics Associate","Project Management Certificate","Microsoft Excel / Data Analysis","OSHA / Safety Training"]},healthcare:{careers:["Medical Assistant","Patient Care Technician","Healthcare Coordinator","Emergency Medical Technician","Clinical Support Specialist","Healthcare Administration Assistant"],education:["Healthcare Administration","Nursing Prerequisites","Medical Assisting","Public Health","Health Information Management"],certs:["BLS / CPR","EMT Certification","Medical Assistant Certification","Phlebotomy","Healthcare IT Basics"]},it:{careers:["IT Support Specialist","Help Desk Technician","Network Technician","Systems Administrator","Technical Support Analyst","Cloud Support Associate"],education:["Information Technology","Computer Science","Network Administration","Cloud Computing","Cybersecurity"],certs:["CompTIA A+","Network+","Security+","Microsoft Azure Fundamentals","Google IT Support"]},cybersecurity:{careers:["Cybersecurity Analyst","SOC Analyst","Information Security Specialist","Risk and Compliance Analyst","Network Security Technician"],education:["Cybersecurity","Information Technology","Computer Science","Digital Forensics","Information Systems"],certs:["Security+","Network+","CySA+","Certified Ethical Hacker","Microsoft Security Fundamentals"]},administration:{careers:["Administrative Coordinator","Human Resources Assistant","Office Manager","Records Specialist","Program Assistant","Operations Support Specialist"],education:["Business Administration","Human Resources","Organizational Leadership","Public Administration","Project Management"],certs:["Microsoft Office Specialist","SHRM Essentials","Project Management Certificate","Business Analytics Basics"]},public_safety:{careers:["Security Manager","Law Enforcement Support","Emergency Management Specialist","Corrections Officer","Public Safety Coordinator"],education:["Criminal Justice","Emergency Management","Public Administration","Homeland Security","Psychology"],certs:["EMT","FEMA ICS/NIMS","Security Guard License","CPR/BLS","Emergency Management Certificates"]},maintenance:{careers:["Maintenance Technician","Fleet Maintenance Coordinator","Aviation Maintenance Support","Diesel Mechanic","Facilities Technician"],education:["Automotive Technology","Aviation Maintenance","Industrial Technology","Engineering Technology","Operations Management"],certs:["ASE Certifications","OSHA Safety","EPA 608","Forklift Certification","Lean Six Sigma"]},intelligence:{careers:["Intelligence Analyst","Research Analyst","Security Analyst","Operations Analyst","Data Analyst"],education:["Criminal Justice","Cybersecurity","Data Analytics","Political Science","Business Analytics"],certs:["Security+","Data Analytics Certificate","GIS Basics","Microsoft Excel / Power BI","Intelligence Analysis Training"]},business:{careers:["Operations Coordinator","Project Coordinator","Business Analyst","Customer Success Specialist","Account Manager"],education:["Business Administration","Management","Marketing","Project Management","Organizational Leadership"],certs:["Project Management Certificate","Lean Six Sigma","Excel / Power BI","Google Analytics","Salesforce Basics"]},trades:{careers:["Electrician Apprentice","HVAC Technician","Construction Project Assistant","Facilities Technician","Welding Apprentice"],education:["Trade School","Apprenticeship","Construction Management","Industrial Technology","Safety Management"],certs:["OSHA 10/30","Forklift Certification","NCCER","EPA 608","CDL"]},education:{careers:["Corporate Trainer","Training Coordinator","Instructor","Academic Advisor","Learning and Development Specialist"],education:["Education","Instructional Design","Organizational Leadership","Business Administration","Psychology"],certs:["Instructional Design Certificate","Trainer Certification","Microsoft Office Specialist","Project Management Certificate","Learning Management Systems"]}};
+function inferCategory(){const spec=(data.specialty||"").toLowerCase(),goal=data.careerGoal||"";if(goal&&goal!=="unsure")return goal;if(spec.includes("92")||spec.includes("supply")||spec.includes("logistic")||spec.includes("materiel")||spec.includes("storekeeper")||spec.includes("ls"))return"logistics";if(spec.includes("68")||spec.includes("4n")||spec.includes("hm")||spec.includes("health")||spec.includes("medic")||spec.includes("corpsman"))return"healthcare";if(spec.includes("25")||spec.includes("1d")||spec.includes("it")||spec.includes("cyber")||spec.includes("5c"))return"it";if(spec.includes("35")||spec.includes("intel")||spec.includes("5i"))return"intelligence";if(spec.includes("42")||spec.includes("3f")||spec.includes("personnel")||spec.includes("yeoman")||spec.includes("admin"))return"administration";if(spec.includes("mp")||spec.includes("master-at-arms")||spec.includes("5811")||spec.includes("ma "))return"public_safety";if(spec.includes("91")||spec.includes("mechanic")||spec.includes("maintenance")||spec.includes("mk"))return"maintenance";return"business"}
+function startWizard(){currentStep=1;showStep();document.getElementById('wizardPanel').scrollIntoView({behavior:'smooth'})}function showStep(){document.querySelectorAll('.step').forEach(s=>s.classList.add('hidden'));document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('hidden');const titles=[["Welcome to Mission Ready Navigator","Answer a few questions and receive a starting action plan."],["Choose Your Mission","Start with what you want to accomplish today."],["Tell Us About Yourself","This helps personalize the guidance."],["Military Background","Select your branch and military career field."],["Benefits Snapshot","Help the Navigator identify benefits to review."],["Career and Education Goal","Connect your experience to where you want to go next."],["Mission Assessment","Review the areas we recommend exploring first."],["Mission Ready Action Plan","Save, print, or use this plan for your next conversation."]];document.getElementById('stepTitle').textContent=titles[currentStep][0];document.getElementById('stepNote').textContent=titles[currentStep][1];document.getElementById('stepCount').textContent=`Step ${Math.max(currentStep,1)} of ${totalSteps}`;const pct=Math.round(currentStep/totalSteps*100);document.getElementById('progressBar').style.width=pct+"%";document.getElementById('progressText').textContent=pct+"%";document.getElementById('backBtn').classList.toggle('hidden',currentStep===0);document.getElementById('nextBtn').textContent=currentStep===0?"Start My Mission":currentStep===totalSteps?"Review Again":"Continue";document.getElementById('printBtn').classList.toggle('hidden',currentStep!==totalSteps);if(currentStep===6)buildAssessment();if(currentStep===7)buildActionPlan()}
+function collectForm(){["branch","specialty","years","leadership","disability","chapter33","vre","dependents","state","usedMgib","careerGoal","educationGoal","notes"].forEach(id=>{const el=document.getElementById(id);if(el)data[id]=el.value})}function validateStep(){if(currentStep===1&&!data.mission)return"Choose one mission to continue.";if(currentStep===2&&!data.status)return"Choose the option that best describes you.";if(currentStep===3){collectForm();if(!data.branch||!data.specialty)return"Select your branch and military career field."}if(currentStep===4){collectForm();if(!data.disability||!data.chapter33||!data.vre||!data.dependents||!data.state)return"Complete the benefits snapshot fields."}if(currentStep===5){collectForm();if(!data.careerGoal||!data.educationGoal)return"Select a career and education goal."}return""}function nextStep(){collectForm();if(currentStep===0){currentStep=1;showStep();return}if(currentStep===totalSteps){currentStep=6;showStep();return}const err=validateStep();if(err){alert(err);return}currentStep++;showStep()}function backStep(){if(currentStep>0){currentStep--;showStep()}}function resetWizard(){Object.keys(data).forEach(k=>delete data[k]);document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));document.querySelectorAll('input,select,textarea').forEach(el=>el.value="");document.getElementById('specialty').innerHTML='<option value="">Select branch first</option>';currentStep=0;showStep()}
+document.querySelectorAll('.option').forEach(opt=>{opt.addEventListener('click',()=>{const field=opt.dataset.field;document.querySelectorAll(`.option[data-field="${field}"]`).forEach(o=>o.classList.remove('selected'));opt.classList.add('selected');data[field]=opt.dataset.value})});document.getElementById('branch').addEventListener('change',function(){const branch=this.value;data.branch=branch;const select=document.getElementById('specialty');select.innerHTML='<option value="">Select one</option>';if(specialtyMap[branch])specialtyMap[branch].forEach(([name,category])=>{const opt=document.createElement('option');opt.value=name;opt.textContent=name;opt.dataset.category=category;select.appendChild(opt)})});
+function addChips(id,items){const el=document.getElementById(id);el.innerHTML="";items.forEach(item=>{const span=document.createElement('span');span.className='chip';span.textContent=item;el.appendChild(span)})}function buildAssessment(){collectForm();const category=inferCategory(),cd=careerData[category]||careerData.business;const benefits=[];benefits.push("Chapter 33 Post-9/11 GI Bill");if(data.disability&&data.disability!=="none"&&data.disability!=="0")benefits.unshift("Chapter 31 VR&E");if(data.dependents==="yes")benefits.push("Dependent Benefit Planning");if(data.state==="CA"&&data.dependents==="yes")benefits.push("CalVet College Fee Waiver");if(data.usedMgib==="yes"||data.chapter33==="yes_exhausted")benefits.push("Rudisill / 48-Month GI Bill Review");benefits.push("FAFSA / Federal Student Aid");addChips("benefitChips",[...new Set(benefits)]);addChips("careerChips",cd.careers);addChips("educationChips",cd.education);addChips("certChips",cd.certs);const alerts=[];if(data.disability&&!['none','0',''].includes(data.disability)&&data.vre==="no")alerts.push(`<div class="alert"><strong>VR&E Review Recommended:</strong> Because you indicated a service-connected disability rating and have not applied for Chapter 31 VR&E, consider reviewing VR&E before using additional Chapter 33 benefits.</div>`);if(data.state==="CA"&&data.dependents==="yes")alerts.push(`<div class="alert"><strong>California Dependent Benefit:</strong> Because you indicated California residency and dependents, review the CalVet College Fee Waiver for veteran dependents.</div>`);if(data.usedMgib==="yes"||data.chapter33==="yes_exhausted")alerts.push(`<div class="alert"><strong>GI Bill Entitlement Review:</strong> If you used or were eligible for multiple GI Bill programs, review current VA guidance related to additional entitlement.</div>`);document.getElementById("assessmentAlerts").innerHTML=alerts.join("")}
+function buildActionPlan(){collectForm();const category=inferCategory();const actions=[];if(data.disability&&!['none','0',''].includes(data.disability)&&data.vre==="no")actions.push("Review Chapter 31 VR&E eligibility before using additional Chapter 33 Post-9/11 GI Bill benefits.");else actions.push("Confirm your remaining VA education benefit entitlement through VA.gov or a VA representative.");actions.push("Use your military specialty and leadership level to identify civilian career paths and resume keywords.");actions.push("Compare education programs based on career outcomes, delivery format, accreditation, and benefit compatibility.");if(data.state==="CA"&&data.dependents==="yes")actions.push("Review the CalVet College Fee Waiver for eligible dependents attending California public colleges or universities.");if(category==="it"||category==="cybersecurity")actions.push("Review entry-level IT or cybersecurity certifications such as CompTIA A+, Network+, and Security+.");if(category==="logistics")actions.push("Explore logistics, supply chain, operations, inventory management, and project management roles.");if(data.usedMgib==="yes"||data.chapter33==="yes_exhausted")actions.push("Review current VA guidance related to multiple GI Bill programs and potential additional entitlement.");actions.push("Save or print this action plan before meeting with a school, VSO, VR&E counselor, or benefits advisor.");const ol=document.getElementById("actionList");ol.innerHTML="";actions.forEach(a=>{const li=document.createElement("li");li.textContent=a;ol.appendChild(li)});document.getElementById("summary").innerHTML=`<p><strong>Status:</strong> ${data.status||"Not provided"}</p><p><strong>Mission:</strong> ${missionLabel(data.mission)}</p><p><strong>Branch:</strong> ${data.branch||"Not provided"}</p><p><strong>Military Field:</strong> ${data.specialty||"Not provided"}</p><p><strong>Years of Service:</strong> ${data.years||"Not provided"}</p><p><strong>Career Goal:</strong> ${careerLabel(data.careerGoal)}</p>`}function missionLabel(v){return{benefits:"Explore Benefits",career:"Translate Military Experience",education:"Plan Education Path",unsure:"Not Sure Yet"}[v]||"Not provided"}function careerLabel(v){return{business:"Business / Management",it:"Information Technology",cybersecurity:"Cybersecurity",healthcare:"Healthcare",logistics:"Logistics / Supply Chain",trades:"Skilled Trades",education:"Education / Training",public_safety:"Public Safety",administration:"Administration",unsure:"Not sure yet"}[v]||"Not provided"}showStep();
+</script>
 </body>
 </html>
